@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
     return (
         <nav className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto font-mono absolute top-0 left-0 right-0 z-20">
-            <img className='h-20' src={Logo} alt="Logo" />
+            <img className='h-15' src={Logo} alt="Logo" />
 
             {/* nav items */}
             <div className="hidden md:flex gap-8 text-gray-300 text-lg font-medium items-center">
