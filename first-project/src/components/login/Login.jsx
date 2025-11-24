@@ -17,7 +17,7 @@ const Login = () => {
   };
 
   const validatePassword = (password) => {
-    const regex = /^(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[#?!@$%^&*-]).{8,}$/;
+    const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#?!@$%^&*-]).{8,}$/;
     return regex.test(password);
   };
 
@@ -33,21 +33,36 @@ const Login = () => {
     }
 
     setError("");
-    console.log("📩 Signup Submitted!");
-    console.log("Full Name:", fullname);
-    console.log("Email:", email);
-    console.log("Password:", password);
-
+    console.log("Submitted!", formData);
     setFormData({ fullname: "", email: "", password: "" });
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="bg-white shadow-xl p-10 w-[350px] text-center">
-        <h1 className="text-2xl font-bold text-teal-400">BTexx</h1>
+    <div className="min-h-screen flex items-center justify-center mt-10">
+      <div className="bg-white shadow-xl p-10 w-[350px] text-center rounded-lg">
+        
+        <h1 className="text-2xl font-bold text-teal-500">BTexx</h1>
         <h2 className="text-xl font-semibold mt-3">Seconds to sign up!</h2>
 
-        <form onSubmit={handleSubmit} className="mt-5">
+        {/* Google Button */}
+        <button
+          className="w-full border border-gray-300 mt-5 py-2 rounded-md flex items-center justify-center gap-3 hover:bg-gray-100 transition"
+        >
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google"
+            className="w-5 h-5"
+          />
+          Continue with Google
+        </button>
+
+        <div className="flex items-center my-5">
+          <div className="grow h-px bg-gray-300"></div>
+          <span className="px-3 text-gray-500 text-sm">OR</span>
+          <div className="grow h-px bg-gray-300"></div>
+        </div>
+
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="fullname"
@@ -82,14 +97,15 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full bg-teal-300 hover:bg-teal-400 text-white py-2 rounded-md font-semibold"
+            className="w-full bg-teal-400 hover:bg-teal-500 text-white py-2 rounded-md font-semibold"
           >
             Sign up with Email
           </button>
         </form>
+
       </div>
     </div>
   );
 };
 
-export default Login;  
+export default Login;

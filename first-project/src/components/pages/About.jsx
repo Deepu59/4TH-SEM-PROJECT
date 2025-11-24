@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from "../../assets/Img.png";
+// import Img from "../assets/Img.png";
 
 
 const About = () => {
@@ -11,13 +11,13 @@ const About = () => {
         DS is better than your best to-do list
       </p>
 
-      <div className="flex justify-center mt-6">
+      {/* <div className="flex justify-center mt-6">
         <img
           className="h-140 object-contain"
           src={Img}
           alt=""
         />
-      </div>
+      </div> */}
 
       {/* 2 COLUMN SECTION */}
       <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
